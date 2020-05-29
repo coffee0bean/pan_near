@@ -1,0 +1,50 @@
+#file-ul li{
+    display: inline-block;
+    width: 20%;
+}
+#file-name{
+    cursor:pointer;
+}
+#fileOption-ul li{
+    display: inline-block;
+}
+#left-directory{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10%;
+}
+#mid-file{
+    padding: 0 10%;
+}
+#right-preview{
+    /*display: none;*/
+    /*position: absolute;*/
+    right: 0;
+    top: 0;
+    width: 400px;
+}
+#box{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    display: none;
+    z-index: 999;
+}
+#box1{
+    width: 250px;
+    height: 40px;
+    position: fixed;left: 50%; top: 25%;
+    margin-left: -250px;
+    border: 1px solid #000000;
+    background: aliceblue;
+}
+.a{
+    width: 20%;
+    display: inline-block;
+}
+#newFolderName{
+    border-style: none;
+    border-bottom: 1px blue solid;
+}

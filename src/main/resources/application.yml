@@ -1,0 +1,55 @@
+server:
+  port: 81
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  application:
+    name: service
+  profiles:
+    active: default
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:~/.pan_near/db/pan_near
+    username: admin
+    password: 123456
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /static/
+      suffix: .html
+
+  jpa:
+    #    database: MySQL
+    show-sql: false
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  #      naming_strategy: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  #    driver-class-name: com.mysql.jdbc.Driver
+  #    username: root
+  #    password:
+  #    type: com.zaxxer.hikari.HikariDataSource
+  #    url: jdbc:mysql://localhost:3306/pan_near?useSSL=false&testOnBorrow=true&testWhileIdle=true
+  h2:
+    console:
+      settings:
+        web-allow-others: true
+      path: /h2-console
+      enabled: true
+
+  thymeleaf:
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+
+api2doc:
+  enabled: true
+
+
+root:
+  userName: coffee0bean
+  password: 1215225
+  path: ${user.home}\.pan_near\data
