@@ -1,5 +1,13 @@
-#file-ul li{
+#file_details li{
     display: inline-block;
+    /*width: 20%;*/
+}
+#files{
+    width: 100%;
+}
+#files ul li{
+    display: inline-block;
+    line-height: 50px;
     width: 20%;
 }
 #file-name{
@@ -8,13 +16,13 @@
 #fileOption-ul li{
     display: inline-block;
 }
-#left-directory{
+#file_list{
     position: absolute;
     left: 0;
     top: 0;
     width: 10%;
 }
-#mid-file{
+#file_information{
     padding: 0 10%;
 }
 #right-preview{
@@ -23,6 +31,26 @@
     right: 0;
     top: 0;
     width: 400px;
+}
+#upload_div{
+    display: none;
+    /*display: inline-block;*/
+    height: 150px;
+    width: 400px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 300px;
+    margin: auto;
+}
+#file_pond{
+    display: none;
+}
+#upload_region{
+    height: 80%;
+    weight: 80%;
+    border: dodgerblue 2px dashed;
 }
 #box{
     position: fixed;

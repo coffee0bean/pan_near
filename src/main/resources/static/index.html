@@ -4,14 +4,14 @@
     <title>File_manager</title>
     <style>
         * {
-            border:1px red solid;
+            /*border:1px red solid;*/
             list-style: none;
             padding: 0px;
             margin: 0px;
         }
     </style>
     <script src="static/js/jquery-1.8.3.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="static/css/index.css?v=3">
     <link rel="stylesheet" type="text/css" href="static/ztree/css/metroStyle/metroStyle.css"/>
     <script src="static/ztree/js/jquery.ztree.all.js"></script>
     <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
@@ -24,6 +24,11 @@
             <input id="no" type="button" value="取消"/>
         </div>
     </div>
+    <div id="upload_div" class="upload_div">
+        <input type="file" id="file_pond" class="file_pond" />
+        <span>拖拽上传文件</span>
+        <div id="upload_region" class="upload_region"></div>
+    </div>
     <div id="file_list" class="left_files">
         <ul id="tree" class="ztree">
         </ul>
@@ -33,13 +38,14 @@
         <ul id="fileOption-ul">
             <li><input type="button" value="new folder"/></li>
             <li><input t2ype="button" value="upload folder"></li>
-            <li><input type="button" value="upload file"/></li>
+            <li><input type="button" @click="showDiv()" value="upload file"/></li>
         </ul>
         <ul id="file_details">
             <li class="a">fileName</li>
             <li class="a">createDate</li>
             <li class="a">lastModify</li>
-            <li>
+            <br/>
+            <li id="files">
                 <ul id="file-ul" v-for="file in files" v-if="file.isDir">
                     <li style="display: none">{{file.id}}</li>
                     <li><span id="file-name">{{file.folderName}}</span></li>
@@ -54,6 +60,5 @@
     </div>
 </body>
 <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
-<script src="static/js/index.js"></script>
-
+<script src="static/js/index.js?v=1"></script>
 </html>
