@@ -13,6 +13,7 @@ new Vue({
             .catch(function(error){
                 alert(error);
             })
+
     },
     methods:{
         showDiv:function(){
@@ -28,30 +29,30 @@ new Vue({
     methods:{
         drag: function(e){
             const files_list = e.dataTransfer.files;
+            console.log("files_list" + files_list[0])
             e.preventDefault();
-            var f = new window.FormData();
+            const f = new window.FormData();
             if(e.type == "drop"){
 
                 let i = 0, len = files_list.length;
                 for(; i < len; i++) {
                     f.append('upload_file',  files_list[i]);
                 }
-                console.log(f.get("upload_file"))
+                console.log(typeof(f.get("upload_file")))
+                alert(f.get("upload_file"));
                 axios
                     .post("/api/document/upload.document",{
-                            upload_file: e
-                    },
-                        {
-                            headers: {'Content-Type': 'multipart/form-data'}
-                        },
-                        function () {
-                        console.log(e.dataTransfer.files)
-                        })
+                            upload_file: f.get("upload_file")
+                    })
+                        // {
+                        //     headers: {'Content-Type': 'multipart/form-data'}
+                        // },
                     .catch(function (error) {
                         console.log(error)
                     })
                     .finally(function(){
-                        console.log(f.get("upload_file"));
+                        // console.log(f.get("upload_file"));
+                        console.log(f.get("upload_file"))
                     })
                 /*[].forEach.call(files_list,function(current,index,arr){
                     let fileRead = new FileReader();

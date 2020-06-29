@@ -19,8 +19,10 @@ public class DocumentController extends BaseController {
     }
 
     @RequestMapping("upload.document")
-    public String uploadDocument(@RequestParam("upload_file") MultipartFile upload_file,@RequestParam("currentPath") String currentPath){
-        System.out.println(upload_file);
+    public String uploadDocument(@RequestParam("upload_file") MultipartFile [] upload_file,@RequestParam("currentPath") String currentPath){
+        for (int i = 0; i < upload_file.length; i++) {
+            System.out.println(upload_file[i]);
+        }
         return "false";
     }
 }
